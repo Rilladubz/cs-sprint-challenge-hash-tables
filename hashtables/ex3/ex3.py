@@ -4,6 +4,23 @@ def intersection(arrays):
     """
     # Your code here
 
+    nums = {}
+
+    for i in range(len(arrays)):
+        for num in arrays[i]:
+            if num not in nums:
+                nums[num] = 1
+            else:
+                nums[num] += 1
+
+    section = {}
+
+    for each in nums.items():
+        if each[1] > 1:
+            section[each[0]] = each[0]
+
+    result = [num for num in section]
+
     return result
 
 
