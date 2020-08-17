@@ -4,7 +4,18 @@ def has_negatives(a):
     """
     # Your code here
 
-    return result
+    nums = {}
+
+    for each in a:
+        altered_int = abs(each)
+        if altered_int not in nums:
+            nums[altered_int] = 1
+        else:
+            nums[altered_int] += 1
+
+    duplicate_nums = [num for num in nums if nums[num] > 1]
+
+    return duplicate_nums
 
 
 if __name__ == "__main__":
